@@ -7,13 +7,35 @@
   - name: update repository index
     apt:
       update_cache: yes
+    when: ansible_distribution == "Ubuntu"
 
   - name: install apache2 package
     apt:
       name: apache2
       state: latest
+    when: ansible_distribution == "Ubuntu"
 
   - name: add php support for apache
     apt:
       name: libapache2-mod-php
       state: latest
+    when: ansible_distribution == "Ubuntu"
+
+
+  - name: update repository index on amazon linux
+    yum:
+      update_cache: yes
+    when: ansible_distribution == "Amazon"
+
+  - name: install httpd(apache) package for amazon linux
+    yum:
+      name: httpd
+      state: latest
+    when: ansible_distribution == "Amazon"
+
+  - name: add php support for httpd(apache) on amazon linux
+    yum:
+      name: php
+      state: latest
+    when: ansible_distribution == "Amazon"
+
