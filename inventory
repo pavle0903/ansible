@@ -1,4 +1,4 @@
-52.86.97.77
-54.174.36.182
-18.206.232.30
-3.82.141.253
+52.86.97.77 apache_package=apache2 php_package=libapache2-mod-php
+54.174.36.182 apache_package=apache2 php_package=libapache2-mod-php
+18.206.232.30 apache_package=apache2 php_package=libapache2-mod-php
+3.82.141.253 apache_package=httpd php_package=php
