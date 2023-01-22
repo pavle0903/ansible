@@ -1,0 +1,14 @@
+- name: install unzip
+  package:
+    name: unzip
+
+#remote_src: yes znaci da fajl koji treba biti unzipovan dolazi sa remote server# da ansible ne bi trazio po fajlovima zna da se radi o remote, mozda je izbacen# u play-u iznad instaliramo unzip paket i onda play ispod koristi modul/paket  # unarchive koji je od unzip da bi otpakovao
+
+- name: install terraform
+  unarchive:
+    src: https://releases.hashicorp.com/terraform/1.3.7/terraform_1.3.7_linux_amd64.zip 
+    dest: /usr/local/bin
+    remote_src: yes
+    mode: 0755
+    owner: root
+    group: root

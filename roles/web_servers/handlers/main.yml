@@ -1,0 +1,4 @@
+- name: restart_apache #isto ime kao notify u tasku, ovaj handler ce se trigerovati kada se#desi bilo kakva izmena, kao npr izmena emaila(task koji imamo)
+  service:
+    name: "{{ apache_service }}"
+    state: restarted
